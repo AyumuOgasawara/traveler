@@ -9,10 +9,12 @@ class Post extends Model
 {
     use HasFactory;
     
-    // public function getPaginateByLimit(int $limit_count = 5)
-    // {
-    //     return $this::with('country')->orderBy('updated_at', 'DESC')->paginate($limit_count);
-    // }
+    protected $fillable = [
+        'title',
+        'body',
+        'category_id',
+        'county_id',
+        ];
     
     public function category()
     {
