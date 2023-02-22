@@ -9,6 +9,11 @@ class Post extends Model
 {
     use HasFactory;
     
+    // public function getPaginateByLimit(int $limit_count = 5)
+    // {
+    //     return $this::with('country')->orderBy('updated_at', 'DESC')->paginate($limit_count);
+    // }
+    
     public function category()
     {
         return $this->belongsTo(Category::class);

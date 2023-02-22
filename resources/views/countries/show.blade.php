@@ -7,12 +7,13 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1>Blog Name</h1>
-        <div class='posts'>
-            <div class='post'>
-                <h2 class='title'>Title</h2>
-                <p class='body'>This is a sample body.</p>
-            </div>
+        <h1>{{ $country->country_name }}</h1>
+        @foreach ($country->posts as $post)
+        <div class="post">
+            <h2>{{ $post->title }}</h2>
+            <p>{{ $post->body }}</p>
+            <p>カテゴリ名: {{ $post->category->category_name}}</p>
         </div>
+        @endforeach
     </body>
 </html>
