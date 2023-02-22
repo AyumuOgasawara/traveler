@@ -9,10 +9,10 @@
     <body>
         <h1>Choose Country</h1>
         <div class='countries'>
-            @foreach ($posts as $post)
+            @foreach ($countries as $country)
                 <div class='country'>
                     <h2 class='country_name'>
-                        <a href="">{{ $post->country->country_name }}</a>
+                        <a href="/countries/{{ $country->id }}">{{ $country->country_name }}</a>
                     </h2>
                 </div>
             @endforeach
