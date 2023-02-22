@@ -12,10 +12,10 @@ class CountryController extends Controller
         return view('countries/index')->with(['countries' => $country->get()]);
     }
     
-    public function show($id)
+    public function show(Country $country, $id)
     {
-        $country = Country::find($id);
-        return view('countries/show', compact('country'));
+         return view('countries/show')->with(['country' => $country->where('id',$id)->first()]);
     }
     
 }
+?>

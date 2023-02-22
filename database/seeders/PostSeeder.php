@@ -25,6 +25,14 @@ class PostSeeder extends Seeder
                 'updated_at' => new DateTime(),
             ]);
         DB::table('posts')->insert([
+                'title' => '東京タワー',
+                'body' => '東京タワーは夜になるとすごき綺麗です。',
+                'category_id' => 2,
+                'country_id' => 1,
+                'created_at' => new DateTime(),
+                'updated_at' => new DateTime(),
+            ]);
+        DB::table('posts')->insert([
                 'title' => 'Big Ben',
                 'body' => 'イギリスの象徴であるBig Benはテムズ川の横にあります。',
                 'category_id' => 2,
