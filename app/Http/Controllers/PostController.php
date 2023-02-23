@@ -15,12 +15,19 @@ class PostController extends Controller
     }
     public function store(Request $request,Country $country, $id)
     {
+        $validated = $request->validate([
+                'title' => 'required|max:255',
+                'body' => 'required|max:4000',
+                'category_id' => 'required',
+            ]);
+            
         $post = new Post();
-        $post->title = $request->input('title');
-        $post->body = $request->input('body');
-        $post->category_id = $request->input('category_id');
-        $post->country_id = $id;
-        $post->save();
+        $post->fill([
+                'title' => $validated('title'),
+                'body' => $validated('body'),
+                'category_id' => $validated('category_id'),
+                'country_id' => $id,
+            ])->save();
         return redirect('countries/' . $id)->with(['country' => $country->where('id',$id)->first()]);
     }
 }
