@@ -11,11 +11,9 @@ class CountryController extends Controller
     {
         return view('countries/index')->with(['countries' => $country->get()]);
     }
-    
     public function show(Country $country, $id)
     {
          return view('countries/show')->with(['country' => $country->where('id',$id)->first()]);
     }
     
 }
-?>

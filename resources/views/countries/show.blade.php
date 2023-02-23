@@ -13,6 +13,11 @@
         <div class="post">
             <h2>{{ $post->title }}</h2>
             <p>{{ $post->body }}</p>
+            @if ($post->image)
+                <div class="image">
+                    <image src={{ $post->image }} width="50%" alt="画像が読み取れません"/>
+                </div>
+            @endif
             <p>カテゴリ名: {{ $post->category->category_name}}</p>
         </div>
         @endforeach
