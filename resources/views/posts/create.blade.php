@@ -8,7 +8,7 @@
     </head>
     <body>
         <h1>お気に入りをシェアしよう</h1>
-        <form action="/countries/{{$country->id}}/posts" method="POST">
+        <form action="/countries/{{$country->id}}/posts" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="title">
                 <h2>Title</h2>
@@ -19,6 +19,11 @@
                 <h2>Body</h2>
                 <textarea id="body" name="body" placeholder="おすすめについて詳しく教えて">{{ old('body')}}</textarea>
                 <p class="body__error" style="color:red">{{ $errors->first('body') }}</p>
+            </div>
+            <div class='image'>
+                <h2>画像をアップロード</h2>
+                <input type="file" id= "image" name="image" value="{{ old('image') }}"/>
+                <p class="image__error" style="color:red">{{ $errors->first('image') }}</p>
             </div>
             <div>
                 <h2>Category</h2>
