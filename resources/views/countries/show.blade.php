@@ -9,7 +9,7 @@
     <body>
         <h1>{{ $country->country_name }}</h1>
         <a href='/countries/{{ $country->id}}/posts/create'>あなたのお気に入りをシェアしよう！</a>
-        @foreach ($country->posts as $post)
+        @foreach ($posts as $post)
         <div class="post">
             <h2>{{ $post->title }}</h2>
             <p>{{ $post->body }}</p>
@@ -23,6 +23,9 @@
         @endforeach
         <div class='footer'>
             <a href="/">戻る</a>
+        </div>
+        <div>
+            {{ $posts->links() }}
         </div>
     </body>
 </html>
