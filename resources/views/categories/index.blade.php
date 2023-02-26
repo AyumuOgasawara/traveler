@@ -8,7 +8,7 @@
     </head>
     <body>
         <h1>{{ $country->country_name }}</h1>
-        <a href='/countries/{{ $country->country_id}}/posts/create'>あなたのお気に入りをシェアしよう！</a>
+        <a href='/countries/{{ $country->id}}/posts/create'>あなたのお気に入りをシェアしよう！</a>
         @foreach ($posts as $post)
         <div class="post">
             <a href="/posts/{{ $post->id}}" class='title'>{{ $post->title }}</a>
