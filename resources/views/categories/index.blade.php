@@ -22,5 +22,9 @@
             </p>
         </div>
         @endforeach
+        <div>{{ $posts->links() }}</div>
+        <div class='footer'>
+            <a href="/countries/{{ $country->id }}">戻る</a>
+        </div>
     </body>
 </html>

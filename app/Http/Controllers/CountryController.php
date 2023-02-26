@@ -13,7 +13,7 @@ class CountryController extends Controller
     }
     public function show(Country $country)
     {
-        return view('countries/show')->with(['country' => $country, 'posts' => $country->posts()->paginate(5)]);
+        return view('countries/show')->with(['country' => $country, 'posts' => $country->posts()->orderBy('updated_at', 'DESC')->paginate(5)]);
     }
     
 }
