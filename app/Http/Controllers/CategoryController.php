@@ -5,18 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Country;
+use App\Models\Post;
 
 class CategoryController extends Controller
 {
-    public function index(Country $country, Category $category)
+    public function index(Country $country, Category $category, Post $posts)
     {
-        $posts_category = $category->getByCategory();
+        $first_country = $country->posts()->first();
+        $first_category = $category->posts()->first();
+
         
-        $posts = collect();
-        foreach ($posts_category as $post_category){
-            if($post_category->country_id == $country->id)
-                $posts->add($post_category);
-        }
+        $posts = Post::where("category_id", "=", $first_category->category_id)->where("country_id", "=", $first_country->country_id)->orderBy('updated_at', 'DESC')->paginate(1);
+        
         return view('categories/index')->with(['posts' => $posts, "country" =>$country]);
     }
 }
