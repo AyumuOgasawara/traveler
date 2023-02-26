@@ -8,7 +8,7 @@
     </head>
     <body>
         <h1>{{ $country->country_name }}</h1>
-        <a href='/countries/{{ $country->id}}/posts/create'>あなたのお気に入りをシェアしよう！</a>
+        <a href='/countries/{{ $country->country_id}}/posts/create'>あなたのお気に入りをシェアしよう！</a>
         @foreach ($posts as $post)
         <div class="post">
             <a href="/posts/{{ $post->id}}" class='title'>{{ $post->title }}</a>
@@ -18,16 +18,9 @@
                     <image src={{ $post->image }} width="50%" alt="画像が読み取れません"/>
                 </div>
             @endif
-            <p>カテゴリ名:
-            <a href="/countries/{{ $post->country_id}}/categories/{{ $post->category_id }}">{{ $post->category->category_name}}</a>
+            <p>カテゴリ名: {{ $post->category->category_name}}</p>
             </p>
         </div>
         @endforeach
-        <div class='footer'>
-            <a href="/">戻る</a>
-        </div>
-        <div>
-            {{ $posts->links() }}
-        </div>
     </body>
 </html>

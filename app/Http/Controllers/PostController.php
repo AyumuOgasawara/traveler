@@ -34,5 +34,10 @@ class PostController extends Controller
         $post->fill($input)->save();
         return redirect('countries/' . $id)->with(['country' => $country->where('id',$id)->first()]);
     }
+    
+    public function detail(Post $post)
+    {
+        return view('posts/detail')->with(['post' => $post]);
+    }
 }
 ?>
