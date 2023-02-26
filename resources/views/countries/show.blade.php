@@ -11,7 +11,7 @@
         <a href='/countries/{{ $country->id}}/posts/create'>あなたのお気に入りをシェアしよう！</a>
         @foreach ($posts as $post)
         <div class="post">
-            <h2>{{ $post->title }}</h2>
+            <a href="/posts/{{ $post->id}}" class='title'>{{ $post->title }}</a>
             <p>{{ $post->body }}</p>
             @if ($post->image)
                 <div class="image">

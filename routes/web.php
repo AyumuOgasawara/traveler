@@ -11,3 +11,4 @@ Route::get('/countries/{country}', [CountryController::class,'show'])->name('cou
 
 Route::get('/countries/{id}/posts/create', [PostController::class, 'create']);
 Route::post('/countries/{id}/posts', [PostController::class, 'store']);
+Route::get('/posts/{post}', [PostController::class, 'detail']);
