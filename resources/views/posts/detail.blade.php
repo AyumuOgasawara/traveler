@@ -17,6 +17,9 @@
         @endif
         <p>カテゴリ名: {{ $post->category->category_name}}</p>
         <div class='footer'>
+            <a href="/posts/{{$post->id}}/edit">編集</a>
+        </div>
+        <div class='footer'>
             <a href="/countries/{{$post->country_id}}">戻る</a>
         </div>
     </body>

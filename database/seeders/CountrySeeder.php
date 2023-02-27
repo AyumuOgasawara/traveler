@@ -18,6 +18,7 @@ class CountrySeeder extends Seeder
     {
         DB::table('countries')->insert([
                 'country_name' => '日本',
+                'image' =>'https://res.cloudinary.com/dhmmkcidj/image/upload/v1677479646/UQrNeDUsFwNDA5som51RjgcBgwXeB0rD26oxNduqMTU_sl4u1e.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
             ]);
