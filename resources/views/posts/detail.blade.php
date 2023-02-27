@@ -19,8 +19,22 @@
         <div class='footer'>
             <a href="/posts/{{$post->id}}/edit">編集</a>
         </div>
+        <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
+            @csrf
+            @method('DELETE')
+            <button type="button" onclick="deletePost({{ $post->id }})">削除</button>
+        </form>
         <div class='footer'>
             <a href="/countries/{{$post->country_id}}">戻る</a>
         </div>
+        <script>
+            function deletePost(id) {
+                'use strict'
+                
+                if (confirm('削除すると復元できません。\n本当にしますか？')) {
+                    document.getElementById(`form_${id}`).submit();
+                }
+            }
+        </script>
     </body>
 </html>
