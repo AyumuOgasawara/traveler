@@ -9,13 +9,12 @@ use App\Models\Post;
 
 class CategoryController extends Controller
 {
-    public function index(Country $country, Category $category, Post $posts)
+    public function index(Country $country, Category $category, Post $post)
     {
         $first_country = $country->posts()->first();
         $first_category = $category->posts()->first();
-
         
-        $posts = Post::where("category_id", "=", $first_category->category_id)->where("country_id", "=", $first_country->country_id)->orderBy('updated_at', 'DESC')->paginate(1);
+        $posts = $post->getByCategory($first_category, $first_country);
         
         return view('categories/index')->with(['posts' => $posts, "country" =>$country]);
     }

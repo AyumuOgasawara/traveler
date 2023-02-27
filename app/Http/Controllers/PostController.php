@@ -11,18 +11,18 @@ use Cloudinary;
 
 class PostController extends Controller
 {
-    public function create(Country $country,Category $category, $id)
+    public function create(Country $country,Category $category)
     {
-        return view('posts/create')->with(['country' => $country->where('id',$id)->first(), 'categories' => $category->get()]);
+        return view('posts/create')->with(['country' => $country, 'categories' => $category->get()]);
     }
     
-    public function store(PostRequest $request,Country $country, $id)
+    public function store(PostRequest $request,Country $country)
     {
         $input = [
                 'title' => $request->title,
                 'body' => $request->body,
                 'category_id' => $request->category_id,
-                'country_id' => $id,
+                'country_id' => $country->id,
             ];
             
         if($request->file('image')){
@@ -32,12 +32,36 @@ class PostController extends Controller
         
         $post = new Post();
         $post->fill($input)->save();
-        return redirect('countries/' . $id)->with(['country' => $country->where('id',$id)->first()]);
+        return redirect('countries/' . $country->id );
     }
     
     public function detail(Post $post)
     {
         return view('posts/detail')->with(['post' => $post]);
+    }
+    
+    public function edit(Post $post, Category $category)
+    {
+        
+        return view('posts/edit')->with(['post' => $post, 'categories' => $category->get()]);
+    }
+    
+    public function update(PostRequest $request, Post $post)
+    {
+        $input = [
+                'title' => $request->title,
+                'body' => $request->body,
+                'category_id' => $request->category_id,
+                'country_id' => $post->country_id,
+            ];
+            
+        if($request->file('image')){
+            $image_url = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
+            $input += ['image' => $image_url];
+        }
+        
+        $post->fill($input)->save();
+        return redirect('countries/' . $post->country_id );
     }
 }
 ?>

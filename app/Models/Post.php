@@ -16,6 +16,12 @@ class Post extends Model
         'category_id',
         'country_id',
         ];
+        
+    
+    public function getByCategory($first_category, $first_country)
+    {
+        return $this->where("category_id", "=", $first_category->category_id)->where("country_id", "=", $first_country->country_id)->orderBy('updated_at', 'DESC')->paginate(3);
+    }
     
     public function category()
     {
