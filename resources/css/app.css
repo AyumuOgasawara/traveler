@@ -1,0 +1,5 @@
+.country {
+  background-size: contain;
+  background-position: center;
+  height: 400px; /* 画像の高さに合わせて調整してください */
+}
