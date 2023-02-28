@@ -4,10 +4,13 @@
         <meta charset="utf-8">
         <title>Traveler</title>
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link href="{{ secure_asset('/css/country_name_image.css') }}" rel="stylesheet">
     </head>
     <body>
-        <h1>{{ $country->country_name }}</h1>
+        <div class="country_image">
+            <image class="country_img" src={{ $country->image }} width="50%" alt="国の画像"/>
+            <h1 class=country_name >{{ $country->country_name }}</h1>
+        </div>
         <a href='/countries/{{ $country->id}}/posts/create'>あなたのお気に入りをシェアしよう！</a>
         @foreach ($posts as $post)
         <div class="post">

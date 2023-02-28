@@ -1,0 +1,17 @@
+.country_image {
+    position: relative;
+    text-align: center;
+}
+.country_img {
+    width: 50%;
+}
+.country_name {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border:  solid 2px;                             
+    display:  inline-block;                         
+    padding: 10px 20px;                             
+    color: white;
+}

@@ -25,9 +25,11 @@
                 <h2>画像をアップロード</h2>
                 
                 <div class="image">
-                <image id='old_img' src={{ $post->image }} width="50%" alt="画像が読み取れません"/>
+                    @if ($post->image)
+                        <image id='old_img' src={{ $post->image }} width="50%" alt="画像が読み取れません"/>
+                    @endif    
                 </div>
-                <input type="file" id= "image" name="image" onchange="ChangeHidden()" value="{{ $post->image }}"/>
+                <input type="file" id= "image" name="image" value="{{ old('image') }}"/>
                 <p class="image__error" style="color:red">{{ $errors->first('image') }}</p>
             </div>
             <div>
