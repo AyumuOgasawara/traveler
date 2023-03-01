@@ -15,6 +15,7 @@ class Post extends Model
         'title',
         'body',
         'image',
+        'user_id',
         'category_id',
         'country_id',
         ];
@@ -33,5 +34,10 @@ class Post extends Model
     public function country()
     {
         return $this->belongsTo(Country::class);
+    }
+    
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }
