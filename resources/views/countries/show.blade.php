@@ -25,6 +25,7 @@
                 <p>カテゴリ名:
                 <a href="/countries/{{ $post->country_id}}/categories/{{ $post->category_id }}">{{ $post->category->category_name}}</a>
                 </p>
+                <p>投稿者：{{ $post->user->name }}</p>
             </div>
             @endforeach
             <div class='footer'>

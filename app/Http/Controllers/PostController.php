@@ -21,6 +21,7 @@ class PostController extends Controller
         $input = [
                 'title' => $request->title,
                 'body' => $request->body,
+                'user_id' => \Auth::id(),
                 'category_id' => $request->category_id,
                 'country_id' => $country->id,
             ];
@@ -51,6 +52,7 @@ class PostController extends Controller
         $input = [
                 'title' => $request->title,
                 'body' => $request->body,
+                'user_id' => \Auth::id(),
                 'category_id' => $request->category_id,
                 'country_id' => $post->country_id,
             ];
