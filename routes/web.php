@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,10 @@ Route::get('/dashboard', function () {
 Route::controller(CountryController::class)->middleware(['auth'])->group(function(){
    Route::get('/', 'index')->name('index');
    Route::get('/countries/{country}', 'show')->name('show');
+});
+
+Route::controller(HomeController::class)->middleware(['auth'])->group(function(){
+   Route::get('/homes', 'index')->name('home_index'); 
 });
 
 Route::controller(PostController::class)->middleware(['auth'])->group(function(){

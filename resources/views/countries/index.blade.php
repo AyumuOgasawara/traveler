@@ -8,6 +8,9 @@
             <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         </head>
         <body>
+            <div>
+                <a href='/homes'>{{ Auth::user()->name }}さんの投稿一覧</a>
+            </div>
             @foreach ($countries as $country)
             <h2>
             <a href="/countries/{{ $country->id }}">{{ $country->country_name}}</a>
@@ -15,5 +18,4 @@
             @endforeach
         </body>
     </html>
-    <div>{{ Auth::user()->name }}</div>
 </x-app-layout>
