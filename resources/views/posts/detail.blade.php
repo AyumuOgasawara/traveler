@@ -17,6 +17,7 @@
                 </div>
             @endif
             <p>カテゴリ名: {{ $post->category->category_name}}</p>
+            @if ($post->user_id == Auth::id())
             <div class='footer'>
                 <a href="/posts/{{$post->id}}/edit">編集</a>
             </div>
@@ -25,6 +26,7 @@
                 @method('DELETE')
                 <button type="button" onclick="deletePost({{ $post->id }})">削除</button>
             </form>
+            @endif
             <div class='footer'>
                 <a href="/countries/{{$post->country_id}}">戻る</a>
             </div>
