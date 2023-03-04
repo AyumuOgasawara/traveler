@@ -9,7 +9,7 @@
         </head>
         <body>
             <h1>編集画面</h1>
-            <form action="/homes/{{$post->id}}" method="POST" enctype="multipart/form-data">
+            <form action="/home/{{$post->id}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="content_title">

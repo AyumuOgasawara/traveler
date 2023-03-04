@@ -32,11 +32,11 @@ Route::controller(CountryController::class)->middleware(['auth'])->group(functio
 });
 
 Route::controller(HomeController::class)->middleware(['auth'])->group(function(){
-    Route::get('/homes', 'index')->name('home_index'); 
-    Route::get('/homes/{post}', 'detail')->name('detail');
-    Route::get('/homes/{post}/edit', 'edit')->name('edit');
-    Route::put('/homes/{post}', 'update')->name('update');
-    Route::delete('/homes/{post}', 'delete')->name('delete');
+    Route::get('/home', 'index')->name('home_index'); 
+    Route::get('/home/{post}', 'detail')->name('detail');
+    Route::get('/home/{post}/edit', 'edit')->name('edit');
+    Route::put('/home/{post}', 'update')->name('update');
+    Route::delete('/home/{post}', 'delete')->name('delete');
 });
 
 Route::controller(PostController::class)->middleware(['auth'])->group(function(){

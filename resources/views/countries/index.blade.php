@@ -11,7 +11,7 @@
         </head>
         <body>
             <div>
-                <a href='/homes'>{{ Auth::user()->name }}さんの投稿一覧</a>
+                <a href='/home'>{{ Auth::user()->name }}さんの投稿一覧</a>
             </div>
             <div id="regions_div" style="width: 80%; height: 80%;"></div>
         </body>

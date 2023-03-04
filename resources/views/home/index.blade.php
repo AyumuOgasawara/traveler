@@ -11,7 +11,7 @@
             <div class="user_name">{{ Auth::user()->name }}</div>
             @foreach ($posts as $post)
             <div class="post">
-                <a href="/homes/{{ $post->id}}" class='title'>{{ $post->title }}</a>
+                <a href="/home/{{ $post->id}}" class='title'>{{ $post->title }}</a>
                 <p>{{ $post->body }}</p>
                 @if ($post->image)
                     <div class="image">

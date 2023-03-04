@@ -19,16 +19,16 @@
             <p>カテゴリ名: {{ $post->category->category_name}}</p>
             @if ($post->user_id == Auth::id())
             <div class='footer'>
-                <a href="/homes/{{$post->id}}/edit">編集</a>
+                <a href="/home/{{$post->id}}/edit">編集</a>
             </div>
-            <form action="/homes/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
+            <form action="/home/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
                 @csrf
                 @method('DELETE')
                 <button type="button" onclick="deletePost({{ $post->id }})">削除</button>
             </form>
             @endif
             <div class='footer'>
-                <a href="/homes">戻る</a>
+                <a href="/home">戻る</a>
             </div>
             <script>
                 function deletePost(id) {

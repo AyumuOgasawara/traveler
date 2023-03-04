@@ -13,15 +13,15 @@ class HomeController extends Controller
     public function index()
     {
         $posts = \Auth::user()->posts()->orderBy('updated_at', 'DESC')->paginate(5);
-        return view('homes/index')->with(['posts' => $posts]);
+        return view('home/index')->with(['posts' => $posts]);
     }
     public function detail(Post $post)
     {
-        return view('homes/detail')->with(['post' => $post]);
+        return view('home/detail')->with(['post' => $post]);
     }
     public function edit(Post $post, Category $category)
     {
-        return view('homes/edit')->with(['post' => $post, 'categories' => $category->get()]);
+        return view('home/edit')->with(['post' => $post, 'categories' => $category->get()]);
     }
     public function update(PostRequest $request, Post $post)
     {
@@ -39,11 +39,11 @@ class HomeController extends Controller
         }
         
         $post->fill($input)->save();
-        return redirect('homes/' . $post->id );
+        return redirect('home/' . $post->id );
     }
     public function delete(Post $post)
     {
         $post->delete();
-        return redirect('/homes');
+        return redirect('/home');
     }
 }

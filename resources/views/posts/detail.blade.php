@@ -19,7 +19,7 @@
             <p>カテゴリ名: {{ $post->category->category_name}}</p>
             @if ($post->user_id == Auth::id())
             <div class='footer'>
-                <a href="/homes/{{$post->id}}/edit">編集</a>
+                <a href="/posts/{{$post->id}}/edit">編集</a>
             </div>
             <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
                 @csrf
