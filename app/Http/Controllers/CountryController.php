@@ -11,9 +11,10 @@ class CountryController extends Controller
     {
         return view('countries/index')->with(['countries' => $country->get()]);
     }
-    public function show(Country $country)
+    public function show($code)
     {
-        return view('countries/show')->with(['country' => $country, 'posts' => $country->posts()->orderBy('updated_at', 'DESC')->paginate(5)]);
+        $country = Country::where("code", $code)->get();
+        return view('countries/show')->with(['country' => $country[0], 'posts' => $country[0]->posts()->orderBy('updated_at', 'DESC')->paginate(5)]);
     }
     
 }

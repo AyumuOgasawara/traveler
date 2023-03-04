@@ -19,12 +19,14 @@ class CountrySeeder extends Seeder
         DB::table('countries')->insert([
                 'country_name' => '日本',
                 'image' => 'https://res.cloudinary.com/dhmmkcidj/image/upload/v1677634872/yr5k7jhz5xgohutrwaga.jpg',
+                'code' => 'JP',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
             ]);
         DB::table('countries')->insert([
                 'country_name' => '英国',
                 'image' => 'https://res.cloudinary.com/dhmmkcidj/image/upload/v1677660425/england_mv_u6mjsv.jpg',
+                'code' => 'GB',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
             ]);

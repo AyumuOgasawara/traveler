@@ -5,17 +5,15 @@
             <meta charset="utf-8">
             <title>Traveler</title>
             <!-- Fonts -->
-            <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+            <script src="https://maps.googleapis.com/maps/api/js?key={{config('services.map_api')}}&language=ja&region=JP"></script>
+                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                <script src="{{ asset('js/app.js') }}"></script>
         </head>
         <body>
             <div>
                 <a href='/homes'>{{ Auth::user()->name }}さんの投稿一覧</a>
             </div>
-            @foreach ($countries as $country)
-            <h2>
-            <a href="/countries/{{ $country->id }}">{{ $country->country_name}}</a>
-            </h2>
-            @endforeach
+            <div id="regions_div" style="width: 80%; height: 80%;"></div>
         </body>
     </html>
 </x-app-layout>
