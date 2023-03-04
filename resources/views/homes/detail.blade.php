@@ -21,15 +21,14 @@
             <div class='footer'>
                 <a href="/homes/{{$post->id}}/edit">編集</a>
             </div>
-            <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
+            <form action="/homes/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
                 @csrf
                 @method('DELETE')
                 <button type="button" onclick="deletePost({{ $post->id }})">削除</button>
             </form>
             @endif
-            <p>投稿者：{{ $post->user->name }}</p>
             <div class='footer'>
-                <a href="/countries/{{$post->country->code}}">戻る</a>
+                <a href="/homes">戻る</a>
             </div>
             <script>
                 function deletePost(id) {

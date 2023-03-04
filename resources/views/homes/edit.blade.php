@@ -8,22 +8,29 @@
             <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         </head>
         <body>
-            <h1>お気に入りをシェアしよう</h1>
-            <form action="/countries/{{$country->id}}/posts" method="POST" enctype="multipart/form-data">
+            <h1>編集画面</h1>
+            <form action="/homes/{{$post->id}}" method="POST" enctype="multipart/form-data">
                 @csrf
-                <div class="title">
+                @method('PUT')
+                <div class="content_title">
                     <h2>Title</h2>
-                    <input type="text" id="title" name="title" placeholder="タイトル" value="{{ old('title')}}"/>
+                    <input type="text" id="title" name="title" value="{{ $post->title }}"/>
                     <p class="title__error" style="color:red">{{ $errors->first('title') }}</p>
                 </div>
-                <div class='body'>
+                <div class='content_body'>
                     <h2>Body</h2>
-                    <textarea id="body" name="body" placeholder="おすすめについて詳しく教えて">{{ old('body')}}</textarea>
+                    <textarea id="body" name="body" >{{ $post->body }}</textarea>
                     <p class="body__error" style="color:red">{{ $errors->first('body') }}</p>
                 </div>
                 <div class='image'>
                     <h2>画像をアップロード</h2>
-                    <input type="file" id= "image" name="image" value="{{ old('image') }}"/>
+                    
+                    <div class="image">
+                        @if ($post->image)
+                            <image id='old_img' src={{ $post->image }} width="50%" alt="画像が読み取れません"/>
+                        @endif    
+                    </div>
+                    <input type="file" id= "image" name="image" onchange="ChangeHidden()" value="{{ old('image') }}"/>
                     <p class="image__error" style="color:red">{{ $errors->first('image') }}</p>
                 </div>
                 <div>
@@ -34,11 +41,22 @@
                           @endforeach
                     </select>
                 </div>
-                <button type="submit">シェアする</button>
+                <button type="submit">更新</button>
                 <div class='footer'>
-                    <a href="/countries/{{$country->code}}">戻る</a>
+                    <a href="/posts/{{$post->id}}">戻る</a>
                 </div>
             </form>
+            <script type="text/javascript">
+                function ChangeHidden() {
+                  const elem = document.getElementById('old_img');
+                  const input = document.getElementById('image');
+                  if (input.value) {
+                    elem.hidden = true;
+                  } else {
+                    elem.hidden = false;
+                  }
+                }
+            </script>
         </body>
     </html>
 </x-app-layout>

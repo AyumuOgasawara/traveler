@@ -33,7 +33,7 @@ class PostController extends Controller
         
         $post = new Post();
         $post->fill($input)->save();
-        return redirect('countries/' . $country->id );
+        return redirect('countries/' . $country->code );
     }
     
     public function detail(Post $post)
@@ -63,13 +63,13 @@ class PostController extends Controller
         }
         
         $post->fill($input)->save();
-        return redirect('countries/' . $post->country_id );
+        return redirect('countries/' . $post->country->code );
     }
     
     public function delete(Post $post)
     {
         $post->delete();
-        return redirect('/countries/' . $post->country_id );
+        return redirect('/countries/' . $post->country->code );
     }
 }
 ?>

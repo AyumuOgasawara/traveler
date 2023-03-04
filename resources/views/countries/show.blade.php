@@ -5,7 +5,7 @@
             <meta charset="utf-8">
             <title>Traveler</title>
             <!-- Fonts -->
-            <link href="{{ secure_asset('/css/app.css') }}" rel="stylesheet">
+            <link href="{{ secure_asset('/css/show.css') }}" rel="stylesheet">
         </head>
         <body>
             <div class="country_image">

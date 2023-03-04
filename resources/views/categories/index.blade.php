@@ -5,11 +5,11 @@
             <meta charset="utf-8">
             <title>Traveler</title>
             <!-- Fonts -->
-            <link href="{{ secure_asset('/css/app.css') }}" rel="stylesheet">
+            <link href="{{ secure_asset('/css/show.css') }}" rel="stylesheet">
         </head>
         <body>
             <div class="country_image">
-                <image class="country_img" src={{ $country->image }} alt="国の画像"/>
+                <image class="country_img" src={{ $country->image }} width="50%" alt="国の画像"/>
                 <h1 class=country_name >{{ $country->country_name }}</h1>
             </div>
             <a href='/countries/{{ $country->id}}/posts/create'>あなたのお気に入りをシェアしよう！</a>
@@ -28,7 +28,7 @@
             @endforeach
             <div>{{ $posts->links() }}</div>
             <div class='footer'>
-                <a href="/countries/{{ $country->id }}">戻る</a>
+                <a href="/countries/{{ $country->code }}">戻る</a>
             </div>
         </body>
     </html>

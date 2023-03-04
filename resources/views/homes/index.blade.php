@@ -8,11 +8,10 @@
             <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         </head>
         <body>
-            <div class=user_name>{{ Auth::user()->name }}</div>
-            </div>
+            <div class="user_name">{{ Auth::user()->name }}</div>
             @foreach ($posts as $post)
             <div class="post">
-                <a href="/posts/{{ $post->id}}" class='title'>{{ $post->title }}</a>
+                <a href="/homes/{{ $post->id}}" class='title'>{{ $post->title }}</a>
                 <p>{{ $post->body }}</p>
                 @if ($post->image)
                     <div class="image">
