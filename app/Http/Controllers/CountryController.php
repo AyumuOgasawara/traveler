@@ -16,5 +16,4 @@ class CountryController extends Controller
         $country = Country::where("code", $code)->get();
         return view('countries/show')->with(['country' => $country[0], 'posts' => $country[0]->posts()->orderBy('updated_at', 'DESC')->paginate(5)]);
     }
-    
 }

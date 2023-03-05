@@ -14,4 +14,48 @@
     display:  inline-block;                         
     padding: 10px 20px;                             
     color: red;
+    font-size: 1.5em;
+}
+
+.btn{
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: white;
+  text-align: center;
+  color: black;
+  width: 220px;
+  height: 40px;
+  margin-top: 50px;
+}
+
+.post_container{
+    width:100%;
+}
+
+.tile_name{
+    border-bottom: 2px solid black;
+    display: flex;
+    height: 50px;
+}
+
+.title{
+    font-size: x-large;
+    background-color: red;
+    height: 100%;
+}
+
+.name{
+    background-color: blue;
+    height:50%;
+}
+
+.post{
+    border: 2px solid black;
+    background-color: pink;
+    margin-top: 25px;
+    width:50%;
+}
+
+.body p{
+    white-space: pre-wrap;
 }

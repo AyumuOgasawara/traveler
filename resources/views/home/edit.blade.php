@@ -43,7 +43,7 @@
                 </div>
                 <button type="submit">更新</button>
                 <div class='footer'>
-                    <a href="/posts/{{$post->id}}">戻る</a>
+                    <a href="/home/{{$post->id}}">戻る</a>
                 </div>
             </form>
             <script type="text/javascript">

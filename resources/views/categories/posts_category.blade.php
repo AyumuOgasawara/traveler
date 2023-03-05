@@ -12,20 +12,28 @@
                 <image class="country_img" src={{ $country->image }} width="50%" alt="国の画像"/>
                 <h1 class=country_name >{{ $country->country_name }}</h1>
             </div>
-            <a href='/countries/{{ $country->id}}/posts/create'>あなたのお気に入りをシェアしよう！</a>
-            @foreach ($posts as $post)
-            <div class="post">
-                <a href="/posts/{{ $post->id}}" class='title'>{{ $post->title }}</a>
-                <p>{{ $post->body }}</p>
-                @if ($post->image)
-                    <div class="image">
-                        <image src={{ $post->image }} width="50%" alt="画像が読み取れません"/>
+            <button class="btn" onclick="location.href='/countries/{{ $country->id}}/posts/create'">お気に入りをシェアしよう！</button>
+            <div class="post_container">
+                @foreach ($posts as $post)
+                <div class="post">
+                    <div class="tile_name">
+                            <a href="/posts/{{ $post->id}}" class='title'>{{ $post->title }}</a>
+                            <p class="name">投稿者：{{ $post->user->name }}</p>
                     </div>
-                @endif
-                <p>カテゴリ名: {{ $post->category->category_name}}</p>
-                </p>
+                    <div class="image">
+                        @if ($post->image)
+                        <image src={{ $post->image }} width="50%" alt="画像が読み取れません"/>
+                        @endif
+                    </div>
+                    <div class="category">
+                        <p>カテゴリ名: {{ $post->category->category_name}}</p>
+                    </div>
+                    <div class="body">
+                        <p>{{ $post->body }}</p>
+                    </div>
+                </div>
+                @endforeach
             </div>
-            @endforeach
             <div>{{ $posts->links() }}</div>
             <div class='footer'>
                 <a href="/countries/{{ $country->code }}">戻る</a>

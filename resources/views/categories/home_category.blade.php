@@ -8,22 +8,22 @@
             <link href="{{ secure_asset('/css/show.css') }}" rel="stylesheet">
         </head>
         <body>
-            <div class="user_name">{{ Auth::user()->name }}さんの投稿一覧</div>
+            <div>
+                {{ Auth::user()->name }}さんが投稿した投稿一覧{{ $posts[0]->category->category_name }}
+            </div>
             <div class="post_container">
                 @foreach ($posts as $post)
                 <div class="post">
-                    <div class="tile_name">
+                    <dic class="title_name">
                         <a href="/home/{{ $post->id}}" class='title'>{{ $post->title }}</a>
-                    </div>
+                    </dic>
                     <div class="image">
                         @if ($post->image)
-                                <image src={{ $post->image }} width="50%" alt="画像が読み取れません"/>
+                        <image src={{ $post->image }} width="50%" alt="画像が読み取れません"/>
                         @endif
-                    </div>    
+                    </div>
                     <div class="category">
-                        <p>カテゴリ名:
-                        <a href="/home/categories/{{ $post->category_id }}">{{ $post->category->category_name}}</a>
-                        </p>
+                        <p>カテゴリ名: {{ $post->category->category_name}}</p>
                     </div>
                     <div class="body">
                         <p>{{ $post->body }}</p>
@@ -31,11 +31,9 @@
                 </div>
                 @endforeach
             </div>
+            <div>{{ $posts->links() }}</div>
             <div class='footer'>
-                <a href="/countries">戻る</a>
-            </div>
-            <div>
-                {{ $posts->links() }}
+                <a href="/home">戻る</a>
             </div>
         </body>
     </html>

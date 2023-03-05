@@ -27,7 +27,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::controller(CountryController::class)->middleware(['auth'])->group(function(){
-    Route::get('/', 'index')->name('index');
+    Route::get('/countries', 'index')->name('index');
     Route::get('/countries/{code}', 'show')->name('show');
 });
 
@@ -49,7 +49,8 @@ Route::controller(PostController::class)->middleware(['auth'])->group(function()
 });
 
 Route::controller(CategoryController::class)->middleware(['auth'])->group(function(){
-    Route::get('/countries/{country}/categories/{category}', 'index')->name('category_index');
+    Route::get('/countries/{country}/categories/{category}', 'posts_category')->name('posts_category');
+    Route::get('/home/categories/{category}', 'home_category')->name('home_category');
 });
 
 
