@@ -43,7 +43,12 @@
                 {{ $posts->links() }}
             </div>
             
-
+            <div style="width: 100%; height: 500px; background-color: blue;">
+                <div style="background-color: red; width:100%; height: 10%;">ヘッダー</div>
+                <div style="background-color: pink; width:40%; height: 20%; margin-left: 30%; margin-right: 30%;">コンテンツ</div>
+                <div style="background-color: yellow; width:100%; height: 30%;">タイトル</div>
+                <div style="background-color: green; width:100%; height: 20%; margin-top: 20%;">コンテンツ</div>
+            </div>
             
         </body>
     </html>

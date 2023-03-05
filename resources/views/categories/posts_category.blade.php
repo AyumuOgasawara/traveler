@@ -9,7 +9,7 @@
         </head>
         <body>
             <div class="country_image">
-                <image class="country_img" src={{ $country->image }} width="50%" alt="国の画像"/>
+                <image class="country_img" src={{ $country->image }} width="60%" alt="国の画像"/>
                 <h1 class=country_name >{{ $country->country_name }}</h1>
             </div>
             <button class="btn" onclick="location.href='/countries/{{ $country->id}}/posts/create'">お気に入りをシェアしよう！</button>
@@ -22,7 +22,7 @@
                     </div>
                     <div class="image">
                         @if ($post->image)
-                        <image src={{ $post->image }} width="50%" alt="画像が読み取れません"/>
+                        <image src={{ $post->image }} alt="画像が読み取れません"/>
                         @endif
                     </div>
                     <div class="category">

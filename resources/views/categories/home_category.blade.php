@@ -19,7 +19,7 @@
                     </dic>
                     <div class="image">
                         @if ($post->image)
-                        <image src={{ $post->image }} width="50%" alt="画像が読み取れません"/>
+                        <image src={{ $post->image }} alt="画像が読み取れません"/>
                         @endif
                     </div>
                     <div class="category">
