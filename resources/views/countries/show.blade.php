@@ -12,6 +12,14 @@
                 <image class="country_img" src={{ $country->image }} width="60%" alt="国の画像"/>
                 <h1 class=country_name >{{ $country->country_name }}</h1>
             </div>
+            
+            <select onChange="location.href=value;">
+                <option value="">カテゴリー</option>
+                <option value="/countries/{{ $country->id}}/categories/1">食べ物</option>
+                <option value="/countries/{{ $country->id}}/categories/2">観光地</option>
+                <option value="/countries/{{ $country->id}}/categories/3">アクティビティ</option>
+            </select>
+            
             <button class="btn" onclick="location.href='/countries/{{ $country->id}}/posts/create'">お気に入りをシェアしよう！</button>
             <div class="post_container">
                 @foreach ($posts as $post)
@@ -47,7 +55,7 @@
                 <div style="background-color: red; width:100%; height: 10%;">ヘッダー</div>
                 <div style="background-color: pink; width:40%; height: 20%; margin-left: 30%; margin-right: 30%;">コンテンツ</div>
                 <div style="background-color: yellow; width:100%; height: 30%;">タイトル</div>
-                <div style="background-color: green; width:100%; height: 20%; margin-top: 20%;">コンテンツ</div>
+                <div style="background-color: green; width:100%; height: 40%;">コンテンツ</div>
             </div>
             
         </body>
