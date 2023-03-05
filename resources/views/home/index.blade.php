@@ -8,33 +8,28 @@
             <link href="{{ secure_asset('/css/show.css') }}" rel="stylesheet">
         </head>
         <body>
-            <div class="country_image">
-                <image class="country_img" src={{ $country->image }} width="60%" alt="国の画像"/>
-                <h1 class=country_name >{{ $country->country_name }}</h1>
-            </div>
-            <button class="btn" onclick="location.href='/countries/{{ $country->id}}/posts/create'">お気に入りをシェアしよう！</button>
+            <div class="user_name">{{ Auth::user()->name }}さんの投稿一覧</div>
             <div class="post_container">
                 @foreach ($posts as $post)
                 <div class="post">
                     <div class="tile_name">
-                        <a class="title" href="/posts/{{ $post->id}}" class='title'>{{ $post->title }}</a>
-                        <p class="name">投稿者：{{ $post->user->name }}</p>    
+                        <a href="/home/{{ $post->id}}" class='title'>{{ $post->title }}</a>
                     </div>
                     <div class="image">
                         @if ($post->image)
-                        <image src={{ $post->image }} alt="画像が読み取れません"/>
+                                <image src={{ $post->image }} width="50%" alt="画像が読み取れません"/>
                         @endif
-                    </div>
+                    </div>    
                     <div class="category">
                         <p>カテゴリ名:
-                        <a href="/countries/{{ $post->country_id}}/categories/{{ $post->category_id }}">{{ $post->category->category_name}}</a>
-                        </p>    
+                        <a href="/home/categories/{{ $post->category_id }}">{{ $post->category->category_name}}</a>
+                        </p>
                     </div>
                     <div class="body">
-                        <p>{{ $post->body }}</p>    
+                        <p>{{ $post->body }}</p>
                     </div>
-                </div>    
-                @endforeach    
+                </div>
+                @endforeach
             </div>
             <div class='footer'>
                 <a href="/countries">戻る</a>
@@ -42,9 +37,6 @@
             <div>
                 {{ $posts->links() }}
             </div>
-            
-
-            
         </body>
     </html>
 </x-app-layout>
