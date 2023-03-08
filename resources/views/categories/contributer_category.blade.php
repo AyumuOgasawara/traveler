@@ -10,13 +10,13 @@
         <body>
             @if(!is_null($posts[0]))
                 <div>
-                    {{ Auth::user()->name }}さんが投稿した投稿一覧{{ $posts[0]->category->category_name }}
+                    {{ $posts[0]->user->name }}さんが投稿した投稿一覧{{ $posts[0]->category->category_name }}
                 </div>
                 <select onChange="location.href=value;">
                     <option value="">{{ $posts[0]->category->category_name }}</option>
-                    @if($posts[0]->category->id != 1){<option value="/home/categories/1">食べ物</option>}@endif
-                    @if($posts[0]->category->id != 2){<option value="/home/categories/2">観光地</option>}@endif
-                    @if($posts[0]->category->id != 3){<option value="/home/categories/3">アクティビティ</option>}@endif
+                    @if($posts[0]->category->id != 1){<option value="/{{$country->code}}/contributer/{{ $posts[0]->user_id }}/categories/1">食べ物</option>}@endif
+                    @if($posts[0]->category->id != 2){<option value="/{{$country->code}}/contributer/{{ $posts[0]->user_id }}/categories/2">観光地</option>}@endif
+                    @if($posts[0]->category->id != 3){<option value="/{{$country->code}}/contributer/{{ $posts[0]->user_id }}/categories/3">アクティビティ</option>}@endif
                 </select>
                 <div class="post_container">
                     @foreach ($posts as $post)
@@ -39,14 +39,14 @@
                     @endforeach
                 </div>
                 <div class='footer'>
-                    <a href="/home">戻る</a>
+                    <a href="/posts/{{$country->code}}/contributer/{{$user_id}}">戻る</a>
                 </div>
                 <div>
                     {{ $posts->links() }}
                 </div>
             @else
             <div>このカテゴリーの投稿はありません</div>
-            <a href="/home">戻る</a>
+            <a href="/posts/{{$country->code}}/contributer/{{$user_id}}">戻る</a>
             @endif
         </body>
     </html>
