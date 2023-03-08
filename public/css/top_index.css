@@ -1,0 +1,16 @@
+.top_page{
+    background-color: red;
+    width: 100%;
+}
+
+.map{
+    position: relative;
+    
+}
+
+.regions_div{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 80%; height: 80%;
+}

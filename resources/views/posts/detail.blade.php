@@ -11,9 +11,9 @@
         <body>
             <div class="post_container">
                 <div class="post">
-                    <div class="tile_name">
+                    <div class="title_name">
                         <h1 class='title'>{{ $post->title }}</h1>
-                        <p>投稿者：{{ $post->user->name }}</p>
+                        <p class="name">投稿者：{{ $post->user->name }}</p>
                     </div>
                     <div calss="image">
                         @if ($post->image)

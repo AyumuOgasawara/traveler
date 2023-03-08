@@ -6,6 +6,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,6 +52,11 @@ Route::controller(PostController::class)->middleware(['auth'])->group(function()
 Route::controller(CategoryController::class)->middleware(['auth'])->group(function(){
     Route::get('/countries/{country}/categories/{category}', 'posts_category')->name('posts_category');
     Route::get('/home/categories/{category}', 'home_category')->name('home_category');
+    Route::get('{code}/contributer/{user}/categories/{category}', 'contributer_category')->name('contributer_category');
+});
+
+Route::controller(UserController::class)->middleware(['auth'])->group(function(){
+    Route::get('/posts/{code}/contributer/{user}', 'contributer')->name('contributer');
 });
 
 

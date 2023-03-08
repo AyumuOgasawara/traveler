@@ -8,12 +8,12 @@
             <link href="{{ secure_asset('/css/show.css') }}" rel="stylesheet">
         </head>
         <body>
-            <div class="user_name">{{ Auth::user()->name }}さんの投稿一覧</div>
+            <div class="user_name">{{ $posts[0]->user->name }}さんの投稿一覧</div>
             <select onChange="location.href=value;">
                 <option value="">---------</option>
-                <option value="/home/categories/1">食べ物</option>
-                <option value="/home/categories/2">観光地</option>
-                <option value="/home/categories/3">アクティビティ</option>
+                <option value="/{{ $country->code }}/contributer/{{ $posts[0]->user_id }}/categories/1">食べ物</option>
+                <option value="/{{ $country->code }}/contributer/{{ $posts[0]->user_id }}/categories/2">観光地</option>
+                <option value="/{{ $country->code }}/contributer/{{ $posts[0]->user_id }}/categories/3">アクティビティ</option>
             </select>
             <div class="post_container">
                 @foreach ($posts as $post)
@@ -38,7 +38,7 @@
                 @endforeach
             </div>
             <div class='footer'>
-                <a href="/countries">戻る</a>
+                <a href="/countries/{{ $country->code }}">戻る</a>
             </div>
             <div>
                 {{ $posts->links() }}

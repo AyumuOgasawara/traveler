@@ -23,7 +23,7 @@
                 <div class="post_container">
                     @foreach ($posts as $post)
                     <div class="post">
-                        <div class="tile_name">
+                        <div class="title_name">
                                 <a href="/posts/{{ $post->id}}" class='title'>{{ $post->title }}</a>
                                 <p class="name">投稿者：{{ $post->user->name }}</p>
                         </div>

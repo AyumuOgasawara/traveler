@@ -6,6 +6,7 @@
             <title>Traveler</title>
             <!-- Fonts -->
             <link href="{{ secure_asset('/css/show.css') }}" rel="stylesheet">
+            <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
         </head>
         <body>
             <div class="country_image">
@@ -24,9 +25,9 @@
             <div class="post_container">
                 @foreach ($posts as $post)
                 <div class="post">
-                    <div class="tile_name">
+                    <div class="title_name">
                         <a class="title" href="/posts/{{ $post->id}}" class='title'>{{ $post->title }}</a>
-                        <p class="name">投稿者：{{ $post->user->name }}</p>    
+                        <a class="name" href="/posts/{{ $country->code }}/contributer/{{ $post->user_id }}">投稿者：{{ $post->user->name }}</a>    
                     </div>
                     <div class="image">
                         @if ($post->image)
@@ -51,11 +52,11 @@
                 {{ $posts->links() }}
             </div>
             
-            <div style="width: 100%; height: 500px; background-color: blue;">
+            <div style="width: 50%; height: 500px; background-color: blue;">
                 <div style="background-color: red; width:100%; height: 10%;">ヘッダー</div>
                 <div style="background-color: pink; width:40%; height: 20%; margin-left: 30%; margin-right: 30%;">コンテンツ</div>
-                <div style="background-color: yellow; width:100%; height: 30%;">タイトル</div>
-                <div style="background-color: green; width:100%; height: 40%;">コンテンツ</div>
+                <div style="background-color: yellow; width:100%; height: 30%; margin-bottom:10%;">タイトル</div>
+                <div style="background-color: green; width:100%; height: 30%;">コンテンツ</div>
             </div>
             
         </body>

@@ -8,12 +8,17 @@
             <script src="https://maps.googleapis.com/maps/api/js?key={{config('services.map_api')}}&language=ja&region=JP"></script>
                 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                 <script src="{{ asset('js/app.js') }}"></script>
+            <link href="{{ secure_asset('/css/top_index.css') }}" rel="stylesheet">
         </head>
         <body>
-            <div>
-                <a href='/home'>{{ Auth::user()->name }}さんの投稿一覧</a>
+            <div class="top_page">
+                <div "user_name">
+                    <a href='/home'>{{ Auth::user()->name }}さんの投稿一覧</a> <!--ユーザーの名前を表示&クリック後ユーザーの投稿一覧へ遷移-->
+                </div>
+                <div class="map">
+                    <div class="regions_div" id="regions_div"></div>
+                </div>
             </div>
-            <div id="regions_div" style="width: 80%; height: 80%;"></div>
         </body>
     </html>
 </x-app-layout>

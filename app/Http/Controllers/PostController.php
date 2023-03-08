@@ -7,6 +7,7 @@ use App\Http\Requests\PostRequest;
 use App\Models\Post;
 use App\Models\Country;
 use App\Models\Category;
+use App\Models\User;
 use Cloudinary;
 
 class PostController extends Controller
