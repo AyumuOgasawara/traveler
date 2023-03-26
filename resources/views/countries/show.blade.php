@@ -9,19 +9,25 @@
             <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
         </head>
         <body>
-            <div class="country_image">
-                <image class="country_img" src={{ $country->image }} width="60%" alt="国の画像"/>
-                <h1 class=country_name >{{ $country->country_name }}</h1>
+            <div class="header">
+                <div class="top_button">
+                    <button class="top_btn" onclick="location.href='/countries'"><img src="{{ asset('images/traveler1.png') }}" alt="トップページ" /></button>
+                </div>
+                <div class="country_image">
+                    <image class="country_img" src={{ $country->image }} width="60%" alt="国の画像"/>
+                    <h1 class=country_name >{{ $country->country_name }}</h1>
+                </div>
+                <div class="category_create">
+                    <button class="create_btn" onclick="location.href='/countries/{{ $country->id}}/posts/create'">お気に入りをシェアしよう！</button>
+                    <select class="category_option" onChange="location.href=value;">
+                        <option value="">カテゴリー</option>
+                        <option value="/countries/{{ $country->id}}/categories/1">食べ物</option>
+                        <option value="/countries/{{ $country->id}}/categories/2">観光地</option>
+                        <option value="/countries/{{ $country->id}}/categories/3">アクティビティ</option>
+                    </select>
+                </div>
             </div>
             
-            <select onChange="location.href=value;">
-                <option value="">カテゴリー</option>
-                <option value="/countries/{{ $country->id}}/categories/1">食べ物</option>
-                <option value="/countries/{{ $country->id}}/categories/2">観光地</option>
-                <option value="/countries/{{ $country->id}}/categories/3">アクティビティ</option>
-            </select>
-            
-            <button class="btn" onclick="location.href='/countries/{{ $country->id}}/posts/create'">お気に入りをシェアしよう！</button>
             <div class="post_container">
                 @foreach ($posts as $post)
                 <div class="post">
@@ -51,14 +57,6 @@
             <div>
                 {{ $posts->links() }}
             </div>
-            
-            <div style="width: 50%; height: 500px; background-color: blue;">
-                <div style="background-color: red; width:100%; height: 10%;">ヘッダー</div>
-                <div style="background-color: pink; width:40%; height: 20%; margin-left: 30%; margin-right: 30%;">コンテンツ</div>
-                <div style="background-color: yellow; width:100%; height: 30%; margin-bottom:10%;">タイトル</div>
-                <div style="background-color: green; width:100%; height: 30%;">コンテンツ</div>
-            </div>
-            
         </body>
     </html>
 </x-app-layout>

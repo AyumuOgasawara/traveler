@@ -12,9 +12,6 @@
         </head>
         <body>
             <div class="top_page">
-                <div "user_name">
-                    <a href='/home'>{{ Auth::user()->name }}さんの投稿一覧</a> <!--ユーザーの名前を表示&クリック後ユーザーの投稿一覧へ遷移-->
-                </div>
                 <div class="map">
                     <div class="regions_div" id="regions_div"></div>
                 </div>
