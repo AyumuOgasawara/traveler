@@ -35,11 +35,11 @@
                         <a class="title" href="/posts/{{ $post->id}}" class='title'>{{ $post->title }}</a>
                         <a class="name" href="/posts/{{ $country->code }}/contributer/{{ $post->user_id }}">投稿者：{{ $post->user->name }}</a>    
                     </div>
-                    <div class="image">
                         @if ($post->image)
-                        <image src={{ $post->image }} alt="画像が読み取れません"/>
+                        <div class="image">
+                            <image class="post_image" src={{ $post->image }} alt="画像が読み取れません"/>
+                        </div>
                         @endif
-                    </div>
                     <div class="category">
                         <p>カテゴリ名:
                         <a href="/countries/{{ $post->country_id}}/categories/{{ $post->category_id }}">{{ $post->category->category_name}}</a>

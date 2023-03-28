@@ -20,7 +20,7 @@ return new class extends Migration
             $table->text('image')->nullable();
             $table->string('adress')->nullable();
             $table->double('review', 3,2)->nullable();
-            $table->foreignId('user_id')->constrained();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('category_id')->constrained();
             $table->foreignId('country_id')->constrained();
             $table->timestamps();
