@@ -10,9 +10,7 @@
         </head>
         <body>
             <div class="header">
-                <div class="top_button">
-                    <button class="top_btn" onclick="location.href='/countries'"><img src="{{ asset('images/traveler1.png') }}" alt="トップページ" /></button>
-                </div>
+                <div class="header_left"></div>
                 <div class="country_image">
                     <image class="country_img" src={{ $country->image }} width="60%" alt="国の画像"/>
                     <h1 class=country_name >{{ $country->country_name }}</h1>

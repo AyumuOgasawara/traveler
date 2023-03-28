@@ -24,7 +24,7 @@
                 @if (Route::has('login'))
                     <div>
                         @auth
-                            <a href="{{ url('/dashboard') }}" class="welcome_btn">トップページに戻る</a>
+                            <a href="{{ url('/countries') }}" class="welcome_btn">トップページに戻る</a>
                         @else
                             <a href="{{ route('login') }}" class="welcome_btn">ログイン</a>
     

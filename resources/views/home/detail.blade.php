@@ -11,14 +11,14 @@
         <body>
             <div class="post_container">
                 <div class="post">
-                    <div class="tile_name">
+                    <div class="title_name">
                         <h1 class='title'>{{ $post->title }}</h1>
                     </div>
-                    <div calss="image">
-                        @if ($post->image)
-                        <image src={{ $post->image }} alt="画像が読み取れません"/>
-                        @endif
-                    </div>    
+                    @if ($post->image)
+                    <div class="image">
+                        <image class="post_image" src={{ $post->image }} alt="画像が読み取れません"/>
+                    </div>
+                    @endif
                     <div class="category">
                         <p>カテゴリ名: {{ $post->category->category_name}}</p>
                     </div>
