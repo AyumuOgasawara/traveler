@@ -22,13 +22,15 @@
                     @foreach ($posts as $post)
                     <div class="post">
                         <div class="title_name">
-                            <a href="/home/{{ $post->id}}" class="title">{{ $post->title }}</a>
+                            <a class="title" href="/home/{{ $post->id}}">{{ $post->title }}</a>
                         </div>
+                        
+                        @if ($post->image)
                         <div class="image">
-                            @if ($post->image)
-                            <image src={{ $post->image }} alt="画像が読み取れません"/>
-                            @endif
+                            <image class="post_image" src={{ $post->image }} alt="画像が読み取れません"/>
                         </div>
+                        @endif
+                        
                         <div class="category">
                             <p>カテゴリ名: {{ $post->category->category_name}}</p>
                         </div>
