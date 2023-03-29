@@ -37,8 +37,10 @@ body{
     border:  solid 2px;                             
     display:  inline-block;                         
     padding: 10px 20px;                             
-    color: red;
-    font-size: 1.5em;
+    color: black;
+    background-color: rgba(255,255,255,0.5);
+    font-size: 40px;
+    font-family: 'Kaushan Script', cursive;
 }
 
 .category_create{
