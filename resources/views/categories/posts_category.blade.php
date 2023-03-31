@@ -9,15 +9,16 @@
         </head>
         <body>
             
-            @if(!is_null($posts[0]))
+           
                 <div class="header">
                     <div class="header_left"></div>
                     <div class="country_image">
                         <image class="country_img" src={{ $country->image }} width="60%" alt="国の画像"/>
                         <h1 class=country_name >{{ $country->country_name }}</h1>
                     </div>
+                    @if(!is_null($posts[0]))
                     <div class="category_create">
-                        <button class="create_btn" onclick="location.href='/countries/{{ $country->id}}/posts/create'">お気に入りをシェアしよう！</button>
+                        <button class="create_btn" onclick="location.href='/countries/{{ $country->id}}/posts/create'">お気に入りをシェア！</button>
                         <select class="category_option" onChange="location.href=value;">
                             <option value="">{{ $posts[0]->category->category_name }}</option>
                             @if($posts[0]->category->id != 1){<option value="/countries/{{ $country->id}}/categories/1">食べ物</option>}@endif
@@ -52,8 +53,10 @@
                 </div>
                 <div>{{ $posts->links() }}</div>
             @else
-            <div>このカテゴリーの投稿はありません</div>
-            <a href="/countries/{{ $country->code }}">戻る</a>
+            <div class='no_posts'>
+                <div>このカテゴリーの投稿はありません</div>
+                <a href="/countries/{{ $country->code }}">戻る</a>
+            </div>
             @endif
         </body>
     </html>

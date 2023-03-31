@@ -23,10 +23,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
 Route::controller(CountryController::class)->middleware(['auth'])->group(function(){
     Route::get('/countries', 'index')->name('index');
     Route::get('/countries/{code}', 'show')->name('show');
