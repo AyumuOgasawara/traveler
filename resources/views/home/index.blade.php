@@ -9,6 +9,7 @@
         </head>
         <body>
             <div class="user_name">{{ Auth::user()->name }}さんの投稿一覧</div>
+            @if(!is_null($posts[0]))
             <select onChange="location.href=value;">
                 <option value="">---------</option>
                 <option value="/home/categories/1">食べ物</option>
@@ -43,6 +44,13 @@
             <div>
                 {{ $posts->links() }}
             </div>
+            @else
+            <div>{{ Auth::user()->name }}さんの投稿はまだありません。</div>
+            <div>topページから国を選択しお気に入りをシェアしましょう。</div>
+            <div class='footer'>
+                <a href="/countries">戻る</a>
+            </div>
+            @endif
         </body>
     </html>
 </x-app-layout>

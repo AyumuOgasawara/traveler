@@ -16,7 +16,7 @@
                     <h1 class=country_name >{{ $country->country_name }}</h1>
                 </div>
                 <div class="category_create">
-                    <button class="create_btn" onclick="location.href='/countries/{{ $country->id}}/posts/create'">お気に入りをシェアしよう！</button>
+                    <button class="create_btn" onclick="location.href='/countries/{{ $country->id}}/posts/create'">お気に入りをシェア！</button>
                     <select class="category_option" onChange="location.href=value;">
                         <option value="">カテゴリー</option>
                         <option value="/countries/{{ $country->id}}/categories/1">食べ物</option>
@@ -26,6 +26,7 @@
                 </div>
             </div>
             
+            @if(!is_null($posts[0]))
             <div class="post_container">
                 @foreach ($posts as $post)
                 <div class="post">
@@ -55,6 +56,12 @@
             <div>
                 {{ $posts->links() }}
             </div>
+            @else
+            <div>お気に入りをシェア！から初めての投稿を作成しよう！</div>
+            <div class='footer'>
+                <a href="/countries">戻る</a>
+            </div>
+            @endif
         </body>
     </html>
 </x-app-layout>
