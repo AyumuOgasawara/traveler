@@ -23,7 +23,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::controller(CountryController::class)->middleware(['auth'])->group(function(){
+Route::controller(CountryController::class)->middleware(['auth', 'verified'])->group(function(){
     Route::get('/countries', 'index')->name('index');
     Route::get('/countries/{code}', 'show')->name('show');
 });
