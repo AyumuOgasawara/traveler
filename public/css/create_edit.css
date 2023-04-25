@@ -1,0 +1,125 @@
+html{
+    width: 100%;
+}
+
+body{
+    width: 100%;
+}
+
+.big_title_container{
+    position: relative;
+}
+
+.big_title{
+    border:  solid 2px;
+    font-size: 40px;
+    margin-top: 30px;
+    width: 250px;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.post_container{
+    width: 100%;
+    position: relative;
+    
+}
+
+.post{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 130px;
+    width: 55%;
+}
+
+.title_container{
+    display: flex;
+    border:solid 1px;
+}
+
+.body_container{
+    display: flex;
+    border:solid 1px;
+    border-top: 0;
+}
+
+.input{
+    width: 100%;
+}
+
+.image_container{
+    display: flex;
+    border:solid 1px;
+    border-top: 0;
+}
+
+.post_images{
+    height: 300px;
+}
+
+.edit_old_img{
+    height: 80%;
+}
+
+.edit_image{
+    height: 20%;
+}
+
+
+
+.category_container{
+    display: flex;
+    border:solid 1px;
+    border-top: 0;
+}
+
+.left_container{
+    width: 30%;
+    font-size: 30px;
+    border-right: solid 1px;
+}
+
+.right_container{
+    width: 70%;
+    padding-left: 10px
+}
+
+.update_share_btn {
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    background: #f1e767;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fdfbfb), to(#ebedee));
+    background: -webkit-linear-gradient(top, #fdfbfb 0%, #ebedee 100%);
+    background: linear-gradient(to bottom, #fdfbfb 0%, #ebedee 100%);
+    -webkit-box-shadow: inset 1px 1px 1px #fff;
+    box-shadow: inset 1px 1px 1px #fff;
+}
+
+.update_share_btn:hover {
+    background: -webkit-gradient(linear, left bottom, left top, from(#fdfbfb), to(#ebedee));
+    background: -webkit-linear-gradient(bottom, #fdfbfb 0%, #ebedee 100%);
+    background: linear-gradient(to top, #fdfbfb 0%, #ebedee 100%);
+}
+
+a.back_btn {
+    border: 1px solid #ccc;
+    background: #f1e767;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fdfbfb), to(#ebedee));
+    background: -webkit-linear-gradient(top, #fdfbfb 0%, #ebedee 100%);
+    background: linear-gradient(to bottom, #fdfbfb 0%, #ebedee 100%);
+    -webkit-box-shadow: inset 1px 1px 1px #fff;
+    box-shadow: inset 1px 1px 1px #fff;
+}
+
+a.back_btn:hover {
+    background: -webkit-gradient(linear, left bottom, left top, from(#fdfbfb), to(#ebedee));
+    background: -webkit-linear-gradient(bottom, #fdfbfb 0%, #ebedee 100%);
+    background: linear-gradient(to top, #fdfbfb 0%, #ebedee 100%);
+}
+
+.footer{
+    margin-top: 10px;
+}
