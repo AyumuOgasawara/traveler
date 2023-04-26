@@ -5,10 +5,7 @@ google.charts.load('current', {
 
 google.charts.setOnLoadCallback(drawRegionsMap);
 
-function selectHandler(reg) {
-  const countrycode = reg.region;
-  window.location.href = "/countries/" + countrycode;
-}
+
 
 
 function drawRegionsMap() {
@@ -108,6 +105,18 @@ function drawRegionsMap() {
   const options = {
     defaultColor:'#3cb371',
   };
+  
+  function selectHandler(reg) {
+  const countrycode = reg.region
+  let countryName = false;
+  countryName = codes.find(country => country[0] === countrycode);
+  if (countryName) {
+    window.location.href = "/countries/" + countrycode;
+  } else {
+    alert('あなたがクリックした国の国名コードは'+ reg.region + 'です。その国のページはありません');
+  }
+}
+  
   const chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
   google.visualization.events.addListener(chart, 'regionClick', selectHandler);
   chart.draw(data, options);
