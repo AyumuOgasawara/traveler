@@ -11,11 +11,11 @@
         <body>
             <div class="header">
                 <div class="header_left"></div>
-                <div class="country_image">
+                <div class="header_middle">
                     <image class="country_img" src={{ $country->image }} width="60%" alt="国の画像"/>
                     <h1 class=country_name >{{ $country->country_name }}</h1>
                 </div>
-                <div class="category_create">
+                <div class="header_right">
                     <button class="create_btn" onclick="location.href='/countries/{{ $country->id}}/posts/create'">お気に入りをシェア！</button>
                     <select class="category_option" onChange="location.href=value;">
                         <option value="">カテゴリー</option>
@@ -51,15 +51,15 @@
                 @endforeach    
             </div>
             <div class='footer'>
-                <a href="/countries">戻る</a>
-            </div>
-            <div>
-                {{ $posts->links() }}
+                <div>{{ $posts->links() }}</div>
+                <a href="/countries" class="back_btn">戻る</a>
             </div>
             @else
-            <div>お気に入りをシェア！から初めての投稿を作成しよう！</div>
+            <div class='no_posts'>
+                <div>お気に入りをシェア！から初めての投稿を作成しよう！</div>
+            </div>
             <div class='footer'>
-                <a href="/countries">戻る</a>
+                <a href="/countries" class="no_posts_back_btn">戻る</a>
             </div>
             @endif
         </body>

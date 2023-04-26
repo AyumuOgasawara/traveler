@@ -3,7 +3,8 @@ html{
 }
 
 body{
-    width: 100%;    
+    width: 100%;
+    position: relative;
 }
 
 .header{
@@ -15,20 +16,32 @@ body{
     width: 25%;
 }
 
+.header_middle{
+    width: 50%;
+    text-align: center;
+    position: relative;
+}
+
+.header_right{
+    text-align: center;
+    width: 25%;
+}
+
 .top_btn{
     height: 78px;
     width: 275px;
 }
 
-.country_image {
-    position: relative;
-    text-align: center;
-    width: 50%;
+.auth_user_name{
+    margin-top: 20px;
+    font-size: 20px;
 }
+
 
 .country_img {
     display: inline;
 }
+
 .country_name {
     position: absolute;
     left: 50%;
@@ -38,25 +51,24 @@ body{
     display:  inline-block;                         
     padding: 10px 20px;                             
     color: black;
+    background:rgba(255,255,255,0.4);
     font-size: 40px;
     font-family: 'Kaushan Script', cursive;
 }
 
-.category_create{
-    width: 25%;
-}
-
 .create_btn{
-    border: 2px solid black;
+    border: 1px solid;
     border-radius: 5px;
     text-align: center;
     color: black;
     width: 220px;
     height: 40px;
+    margin-top: 30px;
 }
 
 .category_option{
-    margin-top: 50px;   
+    margin-top: 10px;
+    border: solid 1px;
 }
 
 .post_container{
@@ -122,4 +134,55 @@ body{
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
+}
+
+.back_btn {
+    width: 34px;
+    border: 1px solid #ccc;
+    background: #f1e767;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fdfbfb), to(#ebedee));
+    background: -webkit-linear-gradient(top, #fdfbfb 0%, #ebedee 100%);
+    background: linear-gradient(to bottom, #fdfbfb 0%, #ebedee 100%);
+    -webkit-box-shadow: inset 1px 1px 1px #fff;
+    box-shadow: inset 1px 1px 1px #fff;
+}
+
+.back_btn:hover {
+    background: -webkit-gradient(linear, left bottom, left top, from(#fdfbfb), to(#ebedee));
+    background: -webkit-linear-gradient(bottom, #fdfbfb 0%, #ebedee 100%);
+    background: linear-gradient(to top, #fdfbfb 0%, #ebedee 100%);
+}
+
+.pagination li {
+    display: inline-block;
+}
+
+.footer{
+  margin-left: 100px;
+  margin-bottom: 50px;
+}
+
+a.no_posts_back_btn{
+    position: fixed;
+    bottom: 100px;
+    width: 34px;
+    border: 1px solid #ccc;
+    background: #f1e767;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fdfbfb), to(#ebedee));
+    background: -webkit-linear-gradient(top, #fdfbfb 0%, #ebedee 100%);
+    background: linear-gradient(to bottom, #fdfbfb 0%, #ebedee 100%);
+    -webkit-box-shadow: inset 1px 1px 1px #fff;
+    box-shadow: inset 1px 1px 1px #fff;
+}
+
+a.no_posts_back_btn:hover {
+    background: -webkit-gradient(linear, left bottom, left top, from(#fdfbfb), to(#ebedee));
+    background: -webkit-linear-gradient(bottom, #fdfbfb 0%, #ebedee 100%);
+    background: linear-gradient(to top, #fdfbfb 0%, #ebedee 100%);
+}
+
+/*detail画面のedit,deleteボタンの位置*/
+.detail_btn{
+    margin-left: 25%;
+    margin-bottom: 20px;
 }

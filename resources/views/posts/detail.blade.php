@@ -27,20 +27,21 @@
                         <p>{{ $post->body }}</p>
                     </div>
                 </div>
-            </div>        
-                    @if ($post->user_id == Auth::id())
-                    <div class='footer'>
-                        <a href="/posts/{{$post->id}}/edit">編集</a>
-                    </div>
+                @if ($post->user_id == Auth::id())
+                <div class='detail_btn'>
+                    <a href="/posts/{{$post->id}}/edit" class="back_btn">編集</a>
                     <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
                         @csrf
                         @method('DELETE')
-                        <button type="button" onclick="deletePost({{ $post->id }})">削除</button>
+                        <button type="button" onclick="deletePost({{ $post->id }})" class="back_btn">削除</button>
                     </form>
-                    @endif
+                </div>
+                @endif
+            </div>        
+                    
                     
                     <div class='footer'>
-                        <a href="/countries/{{$post->country->code}}">戻る</a>
+                        <a href="/countries/{{$post->country->code}}" class="back_btn">戻る</a>
                     </div>
                     <script>
                         function deletePost(id) {
