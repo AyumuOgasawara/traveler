@@ -3,6 +3,8 @@
   "Password": "パスワード",
   "Email": "メールアドレス",
   "Forgot your password?": "パスワードをお忘れですか？",
+  "Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.": "パスワードをお忘れですか？メールアドレスを使ってリセットすることができます。",
+  "Email Password Reset Link": "パスワードリセットメールを送信",
   "Remember me": "パスワードを保存する",
   "Name": "名前",
   "Confirm Password":"パスワードの確認",

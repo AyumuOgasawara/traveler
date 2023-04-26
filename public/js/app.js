@@ -113,7 +113,7 @@ function drawRegionsMap() {
   if (countryName) {
     window.location.href = "/countries/" + countrycode;
   } else {
-    alert('あなたがクリックした国の国名コードは'+ reg.region + 'です。その国のページはありません');
+    alert('あなたがクリックした国の国名コードは'+ reg.region + 'です。この国のページはありません');
   }
 }
   
