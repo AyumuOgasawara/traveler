@@ -40,7 +40,7 @@
                                 <image class="edit_old_img" id='old_img' src={{ $post->image }} alt="画像が読み取れません"/>
                             @endif
                             <input type="file" class="edit_image" id= "image" name="image" onchange="ChangeHidden()" value="{{ old('image') }}"/>
-                            <p class="image__error" style="color:red">{{ $errors->first('image') }}</p>
+                            <p class="image__error error_img" style="color:red">{{ $errors->first('image') }}</p>
                             </div>
                         </div>
                     <div class="category_container">
