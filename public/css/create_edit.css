@@ -65,10 +65,12 @@ body{
 }
 
 .edit_image{
-    height: 20%;
+    height: 10%;
 }
 
-
+.error_img{
+    height: 10%;
+}
 
 .category_container{
     display: flex;
