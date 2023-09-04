@@ -33,7 +33,7 @@
                         <div class="image_container">
                             <h2 class="image left_container">
                                 画像を
-                                <p>アップロード</p>
+                                <p>アップロードをする</p>
                             </h2>
                             <div class="right_container post_images">
                             @if ($post->image)
